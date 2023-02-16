@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <center>
+        <h1>Hi developers</h1>
+        <hr>
+        <form method="POST">
+            <label for="id">ID: </label>
+            <input id="id" name="id" type="number">
+            <br>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text">
+            <br>
+            <label for="status">Status</label>
+            <input id="status" name="status" type="checkbox">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <hr>
+        <table style="width: 70%; margin: auto">
+            <tr style="border-bottom: 2px solid black">
+                <th align="left">ID</th>
+                <th align="left">Name</th>
+                <th align="left">Status</th>
+            </tr>
+            {% for item in products %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.status }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
